@@ -1,5 +1,20 @@
-import pytest
-@pytest.fixture(scope="session")
-def browser():
-    with pytest.raises(Exception, natch="could not start playwright"):
-        yield p.chromium.launch(headless=True)
+@pytest.fixture()
+def page() -> Page:
+    with sync_playwright() as playwright:
+        browser = get_browser(playwright)
+        page = browser.new_page()
+        yield page
+        browser.close()
+
+
+def get_browser(playwright) -> Browser:
+    browser_type = playwright.chromium if config.playwright.BROWSER == 'chrome' else playwright.firefox
+    return browser_type.launch(
+        headless=config.playwright.IS_HEADLESS,
+        slow_mo=config.playwright.SLOW_MO
+    )
+
+
+@pytest.fixture(scope='function')
+def practice_form(page: Page):
+    return PracticeFormPage(page)
