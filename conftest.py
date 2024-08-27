@@ -1,4 +1,8 @@
 import pytest
+
+from base.pages.practice_form.practice_form_page import PracticeFormPage
+from src import config
+
 from playwright.sync_api import Page, sync_playwright, Browser
 
 
