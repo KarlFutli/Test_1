@@ -24,6 +24,7 @@ class Wait:
 
     _page = None
 
+
     @staticmethod
     def set_page(page):
         Wait._page = page
