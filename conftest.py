@@ -6,6 +6,7 @@ from src import config
 from playwright.sync_api import Page, sync_playwright, Browser
 
 
+
 @pytest.fixture()
 def page() -> Page:
     with sync_playwright() as playwright:

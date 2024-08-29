@@ -10,10 +10,7 @@ class PracticeFormMethods:
         errors = []
         try:
             with allure.step("Ввод имени и фамилии"):
-                Wait.visible(practice_form.Wait_first_name)
                 practice_form.first_name.fill("Иван")
-
-                Wait.visible(practice_form.Wait_last_name)
                 practice_form.last_name.fill("Иванов")
 
         except AssertionError as e:

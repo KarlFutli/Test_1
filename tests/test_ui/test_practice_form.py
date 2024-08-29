@@ -3,7 +3,7 @@ from playwright.sync_api import Page
 
 from base.pages.practice_form.practice_form_page import PracticeFormPage
 from base.pages.practice_form.practice_start import PracticeStart
-
+from conftest import practice_form
 
 class TestPractice:
     @allure.epic("Тест потока 1")
