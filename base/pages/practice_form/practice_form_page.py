@@ -1,4 +1,6 @@
 from playwright.sync_api import Page
+
+from base.page_factory.button import Button
 from base.page_factory.input import Input
 
 class PracticeFormPage:
@@ -8,6 +10,7 @@ class PracticeFormPage:
         """Локаторы страницы: Форма"""
         self.first_name = Input(page, locator='//*[@id="firstName"]', name='Имя')
         self.last_name = Input(page, locator='//*[@id="lastName"]', name='Фамилия')
+        self.gender = Button(page, locator='//*[@for="gender-radio-1"]', name='Пол')
 
         """Ожидания"""
         self.Wait_first_name = '//*[@id="firstName"]'

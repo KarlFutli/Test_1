@@ -12,6 +12,7 @@ class PracticeFormMethods:
             with allure.step("Ввод имени и фамилии"):
                 practice_form.first_name.fill("Иван")
                 practice_form.last_name.fill("Иванов")
+                practice_form.gender.click()
 
         except AssertionError as e:
             errors.append(str(e))
