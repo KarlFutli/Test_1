@@ -20,6 +20,8 @@ def get_browser(playwright) -> Browser:
         headless=PlaywrightConfig.IS_HEADLESS,
         slow_mo=PlaywrightConfig.SLOW_MO
     )
+
+
 @pytest.fixture(scope='function')
 def practice_form(page: Page) -> PracticeFormPage:
     return PracticeFormPage(page)

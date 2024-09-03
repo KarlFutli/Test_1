@@ -53,3 +53,4 @@ class Input(Component):
         with allure.step(f'Наведение курсора на {self.type_of} с именем "{self.name}"'):
             locator = self.get_locator(**kwargs)
             locator.hover()
+

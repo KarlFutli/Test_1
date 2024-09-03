@@ -24,7 +24,6 @@ class Wait:
 
     _page = None
 
-
     @staticmethod
     def set_page(page):
         Wait._page = page
@@ -42,3 +41,4 @@ class Wait:
             page.wait_for_load_state(state="load", timeout=timeout)
         except TimeoutError:
             print(f"Ожидание загрузки страницы {timeout} секунд не завершено.")
+

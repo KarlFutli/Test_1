@@ -8,3 +8,5 @@ class PlaywrightConfig:
     IS_HEADLESS = os.getenv('HEADLESS', 'False').lower() in ['true', '1']
     SLOW_MO = int(os.getenv('SLOW_MO')) if os.getenv('SLOW_MO') is not None else 50
     LOCALE = 'en-US'
+
+

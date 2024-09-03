@@ -76,3 +76,4 @@ class Component(ABC):
         with allure.step(f'Проверка неактивности {self.type_of} "{self.name}"'):
             locator = self.get_locator(**kwargs)
             expect(locator).to_be_disabled()
+
